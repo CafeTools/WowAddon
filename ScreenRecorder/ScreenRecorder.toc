@@ -1,0 +1,20 @@
+## Interface: 100206
+## Title: ScreenRecorder
+## Version: 1.0.0
+## Author: Cåfe-Tichondrius
+## Notes: Automatically records game scenes.
+## IconTexture: Interface\AddOns\ScreenRecorder\icon
+## X-License: All Rights Reserved
+## X-Website: https://www.curseforge.com/wow/addons/ScreenRecorder
+## DefaultState: Enabled
+## SavedVariables: CafeDB
+# SavedVariablesPerCharacter: DB
+# X-Curse-Project-ID: X000
+# X-Wago-ID: X000
+# X-WoWI-ID: X000
+
+Embeds.xml
+Main.lua
+
+
+
