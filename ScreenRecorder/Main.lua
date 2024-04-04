@@ -21,7 +21,7 @@ function Cafe:OnEvent()
 		LoggingCombat(true);
 	end
 
-	--self:Print("CafeRecorder:", zone, instanceType);
+	self:Print("CafeRecorder:", zone, instanceType);
 end
 
 
@@ -39,7 +39,7 @@ end
 
 function Cafe:StartTimer()
 	if LoggingCombat() == true then
-		timer = self:ScheduleTimer("OnTimer", 20);
+		timer = self:ScheduleTimer("OnTimer", 60);
 	end
 end
 
