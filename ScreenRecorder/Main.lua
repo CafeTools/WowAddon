@@ -39,16 +39,14 @@ end
 
 function Cafe:StartTimer()
 	if LoggingCombat() == true then
-		timer = self:ScheduleTimer("OnTimer", 60);
+		timer = self:ScheduleTimer("OnTimer", 90);
 	end
 end
 
 
 function Cafe:EndTimer()
-	if not timer == nil then
-		self:CancelTimer(timer);
-		timer = nil;
-	end
+	self:CancelTimer(timer);
+	timer = nil;
 end
 
 
