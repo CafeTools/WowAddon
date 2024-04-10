@@ -39,7 +39,7 @@ end
 
 function Cafe:StartTimer()
 	if LoggingCombat() == true then
-		timer = self:ScheduleTimer("OnTimer", 90);
+		timer = self:ScheduleTimer("OnTimer", 60);
 	end
 end
 
