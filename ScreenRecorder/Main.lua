@@ -21,7 +21,7 @@ function Cafe:OnEvent()
 		LoggingCombat(true);
 	end
 
-	self:Print("CafeRecorder:", zone, instanceType);
+	self:Print("ScreenRecorder:", zone, instanceType);
 end
 
 
