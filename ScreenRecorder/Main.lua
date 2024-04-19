@@ -8,11 +8,17 @@ function Cafe:OnInitialize()
 
 	self:RegisterEvent("UPDATE_INSTANCE_INFO", "OnEvent");
 	self:RegisterEvent("PLAYER_LOGOUT", "OnLogout");
+
+	LoggingCombat(true);
+	local _, instanceType = GetInstanceInfo();
+	if instanceType == 'none' then
+		timer = self:ScheduleTimer("OnTimer", 30);
+	end
 end
 
 
 function Cafe:OnEvent()
-	local zone, instanceType = GetInstanceInfo();
+	local zone, instanceType, _, _, _, _, _, instanceID = GetInstanceInfo();
 	self:EndTimer();
 
 	if instanceType == 'none' then
@@ -21,7 +27,7 @@ function Cafe:OnEvent()
 		LoggingCombat(true);
 	end
 
-	self:Print("ScreenRecorder:", zone, instanceType);
+	self:Print("ScreenRecorder:", zone, instanceID, instanceType);
 end
 
 
@@ -39,7 +45,7 @@ end
 
 function Cafe:StartTimer()
 	if LoggingCombat() == true then
-		timer = self:ScheduleTimer("OnTimer", 60);
+		timer = self:ScheduleTimer("OnTimer", 30);
 	end
 end
 
