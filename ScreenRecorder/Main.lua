@@ -75,12 +75,11 @@ function Cafe:SavePlayerInfo()
 	self.db.global.raceEng = self:UnitRaceEng(x);
 	self.db.global.level = UnitLevel(x);
 	self.db.global.unitSex = UnitSex(x);
-	self.db.global.unitSexText = self:UnitSexText(x);
 	self.db.global.realm = GetRealmName();
 	self.db.global.locale = GetLocale();
+	self.db.global.buildInfo = GetBuildInfo();
 	self.db.global.expansionLevel = GetExpansionLevel();
 	self.db.global.expansionName = self:ExpansionName();
-	self.db.global.buildInfo = GetBuildInfo();
 end
 
 
@@ -89,15 +88,10 @@ function Cafe:ExpansionName()
 	local names = { 
 		"Classic", "The Burning Crusade", "Wrath of the Lich King",
 		"Cataclysm", "Mists of Pandaria", "Warlords of Draenor", "Legion", 
-		"Battle for Azeroth", "Shadowlands", "Dragonflight" 
+		"Battle for Azeroth", "Shadowlands", "Dragonflight", "The Worldsoul Saga",
+		"...", "...", "...", "...", "...", "...", "...", "...", "...", "..."
 	};
 	return names[level+1];
-end
-
-
-function Cafe:UnitSexText(x)
-	local names = { "Unknown",  "Male",  "Female" };
-	return names[UnitSex(x)];
 end
 
 
@@ -111,3 +105,6 @@ function Cafe:UnitRaceEng(x)
 	local localized, english = UnitRace(x);
 	return english;
 end
+
+
+
